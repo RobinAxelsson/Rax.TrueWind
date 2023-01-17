@@ -1,3 +1,5 @@
+using TrueWind.API;
+
 namespace TrueWind.RestApi;
 
 public class Program
@@ -10,6 +12,7 @@ public class Program
         var app = builder.Build();
         app.UseHttpsRedirection();
         app.MapGet("/health", () => "healthy");
+        app.MapGet("/api/1/venue/1/forecast", () => (new TrueWindAPI()).GetForecast());
 
         app.Run();
 
