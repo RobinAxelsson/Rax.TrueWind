@@ -1,5 +1,10 @@
 # True Wind Application
 
+### Links
+
+- Project page and Kanban board on [GitHub](https://github.com/users/RobinAxelsson/projects/5/views/2)
+- Architecture [diagram](/docs/architecture.drawio) (post design)
+
 ---
 
 ## Purpose
