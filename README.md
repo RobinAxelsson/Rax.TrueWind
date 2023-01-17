@@ -2,8 +2,8 @@
 
 ### Links
 
-- Project page and Kanban board on [GitHub](https://github.com/users/RobinAxelsson/projects/5/views/2)
-- Architecture [diagram](/docs/architecture.drawio) (post design)
+[Repository on GitHub](https://github.com/RobinAxelsson/Rax.TrueWind)
+Checkout docs for visualizations.
 
 ---
 
@@ -13,21 +13,6 @@ Enabling accessible hot spot wind and forecast information from multiple sources
 
 ---
 
-## First steps
+## Git Commit Convention
 
-- [x] UI html mockup
-- [x] Architectural diagram
-- [ ] Create Kanban board on GitHub
-- [ ] Define first iteration(s)
-
----
-
-## Data point
-
-| 12.5 | m/s | wind speed        | ViVa | 13:50 |
-| ---- | --- | ----------------- | ---- | ----- |
-| 15.5 | m/s | wind gusts        |
-| 180  | °   | wind direction    |
-| 16   | °C  | water temperature |
-| 21   | °C  | air temperature   |
-| 1050 | hPa | air pressure      |
+Follow as much as possible [Git Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
