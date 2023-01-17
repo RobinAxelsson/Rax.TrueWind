@@ -60,6 +60,17 @@ public class ClassCompositeTestAttribute: TestCategoryBaseAttribute
     }
 }
 
+[TraitDiscoverer(CategoryTestConst.Assembly.TraitDiscoverer, CategoryTestConst.Assembly.This)]
+public class IntegrationTestAttribute : TestCategoryBaseAttribute
+{
+    public override string CategoryName => CategoryTestConst.Name.ClassIntegrationTest;
+    public override string? Id { get; set; }
+
+    public IntegrationTestAttribute(string id) : base(id)
+    {
+    }
+}
+
 [TraitDiscoverer(CategoryTestConst.Assembly.TraitDiscoverer,CategoryTestConst.Assembly.This)]
 public class ClassIntegrationTestAttribute: TestCategoryBaseAttribute
 {

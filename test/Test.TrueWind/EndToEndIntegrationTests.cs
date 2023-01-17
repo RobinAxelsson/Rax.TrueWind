@@ -1,44 +1,45 @@
 ﻿using FluentAssertions;
+using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net;
 using Test.Shared;
 using Xunit;
+using TrueWind.RestApi;
 
-namespace TrueWind.EndToEndIntegration.Test
+namespace Test.TrueWind;
+
+public class EndToEndIntegrationTests : IDisposable
 {
-    public class EndToEndIntegrationTests : IDisposable
+    private HttpClient _httpClient;
+
+    public EndToEndIntegrationTests()
     {
-        private static HttpClient _httpClient;
+        Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Development");
+        var webApplicationFactory = new WebApplicationFactory<Program>();
+        _httpClient = webApplicationFactory.CreateClient();
+    }
 
-        //public EndToEndIntegrationTests()
-        //{ 
-        //    Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Development");
-        //    var webApplicationFactory = new WebApplicationFactory<Startup>();
-        //    _httpClient = webApplicationFactory.CreateClient();
-        //}
+    [IntegrationTest("RestApi: health check")]
+    [Fact]
+    public async Task Health_check_endpoint_should_return_healthy()
+    {
+        // Act
+        var httpResponseMessage = await _httpClient.GetAsync("/health");
 
-        //[EndToEndIntegrationTest(nameof(SmhiClient))]
-        //public async Task GetMovies_WhenOperatingNormally_ShouldSucceed()
-        //{
-        //    // Act
-        //    _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
-        //    var httpResponseMessage = await _httpClient.GetAsync("api/movies/");
-
-        //    // Assert
-        //    if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
-        //    {
-        //        var actualMovieResource = await httpResponseMessage.Content.ReadAsAsync<IEnumerable<MovieResource>>();
-        //        actualMovieResource.Should().NotBeEmpty();
-        //    }
-        //    else
-        //    {
-        //        var httpContent = await httpResponseMessage.Content.ReadAsStringAsync();
-        //        Assert.Fail($"Reason Phrase: {httpResponseMessage.ReasonPhrase} with Content: {httpContent}");
-        //    }
-        //}
-
-        public void Dispose()
+        // Assert
+        if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
         {
-            _httpClient.Dispose();
+            var healthCheck = await httpResponseMessage.Content.ReadAsStringAsync();
+            healthCheck.Should().Be("healthy");
         }
+        else
+        {
+            var httpContent = await httpResponseMessage.Content.ReadAsStringAsync();
+            Assert.True(false, $"Reason Phrase: {httpResponseMessage.ReasonPhrase} with Content: {httpContent}");
+        }
+    }
+
+    public void Dispose()
+    {
+        _httpClient.Dispose();
     }
 }

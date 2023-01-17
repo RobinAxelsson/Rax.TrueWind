@@ -10,6 +10,7 @@
 
     <ItemGroup>
         <PackageReference Include="FluentAssertions" Version="6.8.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.13" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
         <PackageReference Include="xunit" Version="2.4.1" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
@@ -24,6 +25,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\TrueWind.API\TrueWind.API.csproj" />
+        <ProjectReference Include="..\..\src\TrueWind.RestApi\TrueWind.RestApi.csproj" />
         <ProjectReference Include="..\Test.Shared\Test.Shared.csproj" />
     </ItemGroup>
 
