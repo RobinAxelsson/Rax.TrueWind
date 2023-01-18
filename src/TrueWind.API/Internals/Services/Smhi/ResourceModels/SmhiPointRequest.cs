@@ -1,8 +1,8 @@
 namespace TrueWind.API.Internals.Services.Smhi.ResourceModels;
 
 internal sealed record SmhiPointRequest(
-    string ApprovedTime,
-    string ReferenceTime,
+    DateTime ApprovedTime,
+    DateTime ReferenceTime,
     Geometry Geometry,
     TimeSerie[] TimeSeries
     );

@@ -4,6 +4,7 @@ using TrueWind.API.Internals.Services.Smhi.ResourceModels;
 using TrueWind.API.Internals.Services.Smhi.Exceptions;
 using System.Text.Json;
 using System.Diagnostics.CodeAnalysis;
+using TrueWind.API.Internals.Core.ValueObjects;
 
 namespace TrueWind.API.Internals.Services.Smhi;
 
@@ -27,7 +28,7 @@ internal sealed class SmhiGateway : IDisposable
         }
         catch (Exception ex)
         {
-            if(ex is ArgumentNullException ||
+            if (ex is ArgumentNullException ||
                 ex is NotSupportedException ||
                 ex is JsonException)
             {
@@ -37,7 +38,27 @@ internal sealed class SmhiGateway : IDisposable
             throw;
         }
 
-        return new Forecast(smhiPointRequest!.ApprovedTime);
+        var validTime = smhiPointRequest.TimeSeries[0].ValidTime;
+
+        var parameters = smhiPointRequest.TimeSeries[0].Parameters;
+        var avgWind = parameters.First(x => x.Name == "ws").Values[0];
+        var maxWind = parameters.First(x => x.Name == "gust").Values[0];
+        var windDirection = parameters.First(x => x.Name == "wd").Values[0];
+        var airPressure = parameters.First(x => x.Name == "msl").Values[0];
+        var airTemperature = parameters.First(x => x.Name == "t").Values[0];
+
+        var forecast = new Forecast(
+            _pointRequestEndpoint,
+            approvedTime: smhiPointRequest!.ApprovedTime,
+            validTime: validTime,
+            avgWind: new WindSpeed(avgWind),
+            maxWind: new WindSpeed(maxWind),
+            windDirection: new Direction(windDirection),
+            airTemperature: new AirTemperature(airTemperature),
+            airPressure: new AirPressure(airPressure)
+            );
+
+        return forecast;
     }
 
     private static async Task EnsureSuccess(bool isSuccessStatusCode, HttpStatusCode statusCode, HttpContent content)
