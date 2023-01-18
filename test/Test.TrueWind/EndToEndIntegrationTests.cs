@@ -40,7 +40,7 @@ public class EndToEndIntegrationTests : IDisposable
         }
     }
 
-    [IntegrationTest("RestApi-TrueWind.API")]
+    [EndToEndIntegrationTest("RestApi-TrueWind.API-SmhiOpenApi")]
     [Fact]
     public async Task Forecast_endpoint_should_return_restDtoForecast()
     {
@@ -50,14 +50,12 @@ public class EndToEndIntegrationTests : IDisposable
         // Assert
         if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
         {
-            var restDtoForecast = await httpResponseMessage.Content.ReadFromJsonAsync<RestDtoForecast>();
+           var restDtoForecast = await httpResponseMessage.Content.ReadFromJsonAsync<RestDtoForecast>();
            restDtoForecast.Should().BeOfType<RestDtoForecast>();
+            return;
         }
-        else
-        {
-            var httpContent = await httpResponseMessage.Content.ReadAsStringAsync();
-            Assert.True(false, $"Reason Phrase: {httpResponseMessage.ReasonPhrase} with Content: {httpContent}");
-        }
+        var httpContent = await httpResponseMessage.Content.ReadAsStringAsync();
+        throw new ArgumentException($"Reason Phrase: {httpResponseMessage.ReasonPhrase} with Content: {httpContent}");
     }
 
     public void Dispose()

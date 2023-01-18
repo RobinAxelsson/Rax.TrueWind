@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
-		README.md = README.md
+		src\TrueWind.API\README.md = src\TrueWind.API\README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Shared", "test\Test.Shared\Test.Shared.csproj", "{F3F1E5D9-E9E2-478D-AC5E-3B96C16CFA1D}"
@@ -18,7 +18,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.TrueWind", "test\Test.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C53829F2-8139-46F5-BA7B-BA00BBA63214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrueWind.RestApi", "src\TrueWind.RestApi\TrueWind.RestApi.csproj", "{5E140A0E-861E-4F0D-A776-CC7261409E62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrueWind.RestApi", "src\TrueWind.RestApi\TrueWind.RestApi.csproj", "{5E140A0E-861E-4F0D-A776-CC7261409E62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
