@@ -8,7 +8,7 @@ public sealed record Forecast
         ApprovedTime = approvedTime;
         ValidTime = validTime;
         AvgWind = avgWind;
-        MaxWind = maxWind;
+        GustSpeed = maxWind;
         WindDirection = windDirection;
         AirTemperature = airTemperature;
         AirPressure = airPressure;
@@ -17,7 +17,7 @@ public sealed record Forecast
     public DateTime ApprovedTime { get; }
     public DateTime ValidTime { get; }
     public WindSpeed AvgWind { get; }
-    public WindSpeed MaxWind { get; }
+    public WindSpeed GustSpeed { get; }
     public Direction WindDirection { get; }
     public AirTemperature AirTemperature { get; }
     public AirPressure AirPressure { get; }

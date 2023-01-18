@@ -28,7 +28,7 @@ public record WindSpeed
 
     private static void EnsureValid(float windSpeed)
     {
-        if (0 <= windSpeed || windSpeed < 100)
+        if (windSpeed <= 0 || 100 < windSpeed)
         {
             throw new InvalidUnitValueException("Entered value is not valid wind speed m/s, should be >= 0 and <100 got: " + windSpeed);
         }

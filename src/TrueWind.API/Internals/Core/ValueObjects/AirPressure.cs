@@ -28,7 +28,7 @@ public record AirPressure
 
     private static void EnsureValidAirPressure(int airPressure)
     {
-        if (880 < airPressure || airPressure < 1100)
+        if (airPressure < 880 || 1100 < airPressure)
         {
             throw new InvalidUnitValueException("Entered value is not valid hPa air pressure, should be between 880 and 1100 got: " + airPressure);
         }

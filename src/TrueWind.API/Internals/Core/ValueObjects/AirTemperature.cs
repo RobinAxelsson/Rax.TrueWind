@@ -28,7 +28,7 @@ public record AirTemperature
 
     private static void EnsureValidAirTemerature(int temperature)
     {
-        if (-70 < temperature || temperature < 100)
+        if (temperature < -70 || 100 < temperature)
         {
             throw new InvalidUnitValueException("Entered value is not valid temperature in celcius, should be between -70 and 100 got: " + temperature);
         }

@@ -28,7 +28,7 @@ public record Direction
 
     private static void EnsureValid(int direction)
     {
-        if (0 <= direction || direction < 360)
+        if (direction < 0 || 360 < direction)
         {
             throw new InvalidUnitValueException("Entered value is not valid direction degrees, should be >= 0 and <360 got: " + direction);
         }

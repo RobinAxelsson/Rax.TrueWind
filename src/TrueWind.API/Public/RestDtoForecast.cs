@@ -1,16 +1,18 @@
 namespace TrueWind.API.Public;
 public sealed record RestDtoForecast
 {
-    public RestDtoForecast(string approvedTime)
+    public RestDtoForecast(float windSpeed, float gustSpeed, int windDirection, int airTemperature, int airPressure)
     {
-        ApprovedTime = approvedTime;
+        WindSpeed_ms = windSpeed;
+        GustSpeed_ms = gustSpeed;
+        WindDirection_deg = windDirection;
+        AirTemperature_celcius = airTemperature;
+        AirPressure_hPa = airPressure;
     }
 
-    public string ApprovedTime { get; }
-
-    //public float WindSpeed { get; }
-    //public float WindMax { get; }
-    //public int WindDirection { get; }
-    //public int AirTemperature { get; }
-    //public int AirPressure { get; }
+    public float WindSpeed_ms { get; }
+    public float GustSpeed_ms { get; }
+    public int WindDirection_deg { get; }
+    public int AirTemperature_celcius { get; }
+    public int AirPressure_hPa { get; }
 }
