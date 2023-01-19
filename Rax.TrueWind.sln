@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C53829F2-8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrueWind.RestApi", "src\TrueWind.RestApi\TrueWind.RestApi.csproj", "{5E140A0E-861E-4F0D-A776-CC7261409E62}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrueWind.Core", "src\TrueWind.Core\TrueWind.Core.csproj", "{C611CA03-DD7D-4418-9D00-639988F0A141}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{5E140A0E-861E-4F0D-A776-CC7261409E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E140A0E-861E-4F0D-A776-CC7261409E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E140A0E-861E-4F0D-A776-CC7261409E62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C611CA03-DD7D-4418-9D00-639988F0A141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C611CA03-DD7D-4418-9D00-639988F0A141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C611CA03-DD7D-4418-9D00-639988F0A141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C611CA03-DD7D-4418-9D00-639988F0A141}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

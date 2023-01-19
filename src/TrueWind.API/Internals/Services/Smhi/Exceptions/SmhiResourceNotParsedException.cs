@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
-using TrueWind.API.Internals.Core.Exceptions;
+using TrueWind.Core.Exceptions;
 
 namespace TrueWind.API.Internals.Services.Smhi.Exceptions
 {

@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace TrueWind.API.Internals.Core.Exceptions;
+namespace TrueWind.Core.Exceptions;
 
 [Serializable]
 [ExcludeFromCodeCoverage]

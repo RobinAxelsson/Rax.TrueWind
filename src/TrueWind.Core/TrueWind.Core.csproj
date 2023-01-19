@@ -7,11 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TrueWind.Core\TrueWind.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Internals\Core\Exceptions\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Events\" />
+    <Folder Include="ValueObjects\" />
   </ItemGroup>
 
 </Project>

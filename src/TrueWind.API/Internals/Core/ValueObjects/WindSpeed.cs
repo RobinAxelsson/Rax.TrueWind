@@ -1,4 +1,4 @@
-using TrueWind.API.Internals.Core.Exceptions;
+using TrueWind.Core.Exceptions;
 
 namespace TrueWind.API.Internals.Core.ValueObjects;
 
