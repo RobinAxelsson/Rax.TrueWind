@@ -5,15 +5,25 @@ using TrueWind.API.Internals.Services.Smhi.Exceptions;
 using System.Text.Json;
 using System.Diagnostics.CodeAnalysis;
 using TrueWind.Core.ValueObjects;
+using TrueWind.Core.Entities;
+using TrueWind.API.Internals.ConfigurationProviders;
 
 namespace TrueWind.API.Internals.Services.Smhi;
 
 internal sealed class SmhiGateway : IDisposable
 {
     private bool _disposed;
-    HttpClient? _httpClient;
-    HttpClient HttpClient => _httpClient ??= new HttpClient();
-    private const string _pointRequestEndpoint = @"https://salihaxelsson.com/truewind/api/1/point/data.json";
+    private HttpClient? _httpClient;
+    private HttpClient HttpClient => _httpClient ??= new HttpClient();
+
+    //private const string _pointRequestEndpoint = @"https://salihaxelsson.com/truewind/api/1/point/data.json";
+    private readonly string _pointRequestEndpoint;
+    public SmhiGateway()
+    {
+        ConfigurationProviderBase configurationProvider = new ConfigurationProvider();
+        _pointRequestEndpoint = configurationProvider.GetUrlSmhiGkss();
+    }
+
     public async Task<Forecast> GetGkssData()
     {
         var httpResponseMessage = await HttpClient.GetAsync(_pointRequestEndpoint).ConfigureAwait(false);

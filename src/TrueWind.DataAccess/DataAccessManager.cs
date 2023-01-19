@@ -2,7 +2,7 @@
 {
     public class DataAccessManager
     {
-        // GET
+        // Get Forecast by venue
 
         // SEARCH
 
