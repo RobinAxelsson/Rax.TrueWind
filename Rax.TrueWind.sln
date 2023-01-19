@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrueWind.RestApi", "src\Tru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrueWind.Core", "src\TrueWind.Core\TrueWind.Core.csproj", "{C611CA03-DD7D-4418-9D00-639988F0A141}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrueWind.DataAccess", "src\TrueWind.DataAccess\TrueWind.DataAccess.csproj", "{61A08A93-7C6E-4166-8720-11F30F9C653E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{C611CA03-DD7D-4418-9D00-639988F0A141}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C611CA03-DD7D-4418-9D00-639988F0A141}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C611CA03-DD7D-4418-9D00-639988F0A141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61A08A93-7C6E-4166-8720-11F30F9C653E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A08A93-7C6E-4166-8720-11F30F9C653E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A08A93-7C6E-4166-8720-11F30F9C653E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A08A93-7C6E-4166-8720-11F30F9C653E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

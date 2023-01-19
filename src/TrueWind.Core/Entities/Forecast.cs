@@ -1,4 +1,6 @@
-﻿namespace TrueWind.Core.ValueObjects;
+﻿using TrueWind.Core.ValueObjects;
+
+namespace TrueWind.Core.Entities;
 
 public sealed record Forecast
 {
