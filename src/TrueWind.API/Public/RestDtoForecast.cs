@@ -1,4 +1,4 @@
-namespace TrueWind.API.Public;
+namespace TrueWind.Api.Public;
 public sealed record RestDtoForecast
 {
     public RestDtoForecast(float windSpeed_ms, float gustSpeed_ms, int windDirection_deg, int airTemperature_celcius, int airPressure_hPa)

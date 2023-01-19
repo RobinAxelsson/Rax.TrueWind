@@ -1,24 +1,22 @@
 using System.Net.Http.Json;
 using System.Net;
-using TrueWind.API.Internals.Services.Smhi.ResourceModels;
-using TrueWind.API.Internals.Services.Smhi.Exceptions;
+using TrueWind.Smhi.Exceptions;
 using System.Text.Json;
 using System.Diagnostics.CodeAnalysis;
 using TrueWind.Core.ValueObjects;
 using TrueWind.Core.Entities;
-using TrueWind.API.Internals.ConfigurationProviders;
+using TrueWind.Smhi.ResourceModels;
+using TrueWind.Smhi.ConfigurationProviders;
 
-namespace TrueWind.API.Internals.Services.Smhi;
+namespace TrueWind.Smhi;
 
-internal sealed class SmhiGateway : IDisposable
+public class SmhiAPI : IDisposable
 {
     private bool _disposed;
     private HttpClient? _httpClient;
     private HttpClient HttpClient => _httpClient ??= new HttpClient();
-
-    //private const string _pointRequestEndpoint = @"https://salihaxelsson.com/truewind/api/1/point/data.json";
     private readonly string _pointRequestEndpoint;
-    public SmhiGateway()
+    public SmhiAPI()
     {
         ConfigurationProviderBase configurationProvider = new ConfigurationProvider();
         _pointRequestEndpoint = configurationProvider.GetUrlSmhiGkss();

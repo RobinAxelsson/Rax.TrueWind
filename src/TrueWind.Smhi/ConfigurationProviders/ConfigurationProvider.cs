@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Diagnostics.CodeAnalysis;
 
-namespace TrueWind.API.Internals.ConfigurationProviders
+namespace TrueWind.Smhi.ConfigurationProviders
 {
     internal sealed class ConfigurationProvider : ConfigurationProviderBase
     {

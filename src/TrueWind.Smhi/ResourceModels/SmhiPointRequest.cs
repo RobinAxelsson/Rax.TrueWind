@@ -1,4 +1,4 @@
-namespace TrueWind.API.Internals.Services.Smhi.ResourceModels;
+namespace TrueWind.Smhi.ResourceModels;
 
 internal sealed record SmhiPointRequest(
     DateTime ApprovedTime,

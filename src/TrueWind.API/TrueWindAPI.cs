@@ -1,11 +1,11 @@
-using TrueWind.API.Internals.Services.Smhi;
-using TrueWind.API.Public;
+using TrueWind.Api.Public;
+using TrueWind.Smhi;
 
-namespace TrueWind.API;
-public class TrueWindAPI
+namespace TrueWind.Api;
+public class TrueWindApi
 {
-    private SmhiGateway? _smhiGateway;
-    private SmhiGateway SmhiGateway => _smhiGateway ??= new SmhiGateway();
+    private SmhiAPI? _smhiGateway;
+    private SmhiAPI SmhiGateway => _smhiGateway ??= new SmhiAPI();
     public async Task<RestDtoForecast> GetForecast() {
         var forecast = await SmhiGateway.GetGkssData();
         var dto = new RestDtoForecast(

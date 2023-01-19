@@ -5,7 +5,7 @@ using Test.Shared;
 using Xunit;
 using TrueWind.RestApi;
 using System.Net.Http.Json;
-using TrueWind.API.Public;
+using TrueWind.Api.Public;
 
 namespace Test.TrueWind;
 

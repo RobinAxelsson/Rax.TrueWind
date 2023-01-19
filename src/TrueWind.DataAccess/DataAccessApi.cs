@@ -1,6 +1,6 @@
 ﻿namespace TrueWind.DataAccess
 {
-    public class DataAccessManager
+    public class DataAccessAPI
     {
         // Get Forecast by venue
 

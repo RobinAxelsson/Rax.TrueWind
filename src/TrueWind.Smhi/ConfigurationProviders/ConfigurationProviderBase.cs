@@ -1,13 +1,13 @@
 ﻿using TrueWind.Core.Exceptions;
 
-namespace TrueWind.API.Internals.ConfigurationProviders
+namespace TrueWind.Smhi.ConfigurationProviders
 {
     internal abstract class ConfigurationProviderBase
     {
         public string GetUrlSmhiGkss()
         {
             var smhiUrl = RetrieveConfigurationSettingValueThrowIfMissing("UrlSmhiGkss");
-            if(smhiUrl.EndsWith("/", StringComparison.OrdinalIgnoreCase))
+            if (smhiUrl.EndsWith("/", StringComparison.OrdinalIgnoreCase))
             {
                 throw new ConfigurationSettingMissingException($"Url {smhiUrl} needs to end with a '/'");
             }

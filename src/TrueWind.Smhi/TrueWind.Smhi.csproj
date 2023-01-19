@@ -14,11 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TrueWind.Core\TrueWind.Core.csproj" />
-    <ProjectReference Include="..\TrueWind.Smhi\TrueWind.Smhi.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Internals\" />
   </ItemGroup>
 
 </Project>

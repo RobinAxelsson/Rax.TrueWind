@@ -1,4 +1,4 @@
-using TrueWind.API;
+using TrueWind.Api;
 
 namespace TrueWind.RestApi;
 
@@ -8,11 +8,11 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddSingleton<TrueWindAPI>();
+        builder.Services.AddSingleton<TrueWindApi>();
         var app = builder.Build();
         app.UseHttpsRedirection();
         app.MapGet("/health", () => "healthy");
-        app.MapGet("/api/1/venue/1/forecast", () => app.Services.GetRequiredService<TrueWindAPI>().GetForecast());
+        app.MapGet("/api/1/venue/1/forecast", () => app.Services.GetRequiredService<TrueWindApi>().GetForecast());
 
         app.Run();
 

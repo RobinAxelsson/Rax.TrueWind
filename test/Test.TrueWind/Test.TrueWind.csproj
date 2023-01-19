@@ -34,7 +34,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\TrueWind.API\TrueWind.API.csproj" />
+        <ProjectReference Include="..\..\src\TrueWind.API\TrueWind.Api.csproj" />
         <ProjectReference Include="..\..\src\TrueWind.RestApi\TrueWind.RestApi.csproj" />
         <ProjectReference Include="..\Test.Shared\Test.Shared.csproj" />
     </ItemGroup>

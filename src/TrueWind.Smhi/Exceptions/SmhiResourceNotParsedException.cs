@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using TrueWind.Core.Exceptions;
 
-namespace TrueWind.API.Internals.Services.Smhi.Exceptions
+namespace TrueWind.Smhi.Exceptions
 {
     [Serializable]
     [ExcludeFromCodeCoverage]
