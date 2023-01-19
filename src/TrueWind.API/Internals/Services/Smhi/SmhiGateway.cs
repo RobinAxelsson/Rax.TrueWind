@@ -4,7 +4,7 @@ using TrueWind.API.Internals.Services.Smhi.ResourceModels;
 using TrueWind.API.Internals.Services.Smhi.Exceptions;
 using System.Text.Json;
 using System.Diagnostics.CodeAnalysis;
-using TrueWind.API.Internals.Core.ValueObjects;
+using TrueWind.Core.ValueObjects;
 
 namespace TrueWind.API.Internals.Services.Smhi;
 

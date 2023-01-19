@@ -1,4 +1,4 @@
-﻿namespace TrueWind.API.Internals.Core.ValueObjects;
+﻿namespace TrueWind.Core.ValueObjects;
 
 public sealed record Forecast
 {

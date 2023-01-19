@@ -10,8 +10,4 @@
     <ProjectReference Include="..\TrueWind.Core\TrueWind.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Internals\Core\Exceptions\" />
-  </ItemGroup>
-
 </Project>

@@ -1,6 +1,6 @@
 using TrueWind.Core.Exceptions;
 
-namespace TrueWind.API.Internals.Core.ValueObjects;
+namespace TrueWind.Core.ValueObjects;
 
 public record Direction
 {
