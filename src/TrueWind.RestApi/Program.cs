@@ -8,11 +8,11 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        //builder.Services.AddSingleton<TrueWindAPI>();
+        builder.Services.AddSingleton<TrueWindAPI>();
         var app = builder.Build();
         app.UseHttpsRedirection();
         app.MapGet("/health", () => "healthy");
-        app.MapGet("/api/1/venue/1/forecast", () => (new TrueWindAPI()).GetForecast());
+        app.MapGet("/api/1/venue/1/forecast", () => app.Services.GetRequiredService<TrueWindAPI>().GetForecast());
 
         app.Run();
 

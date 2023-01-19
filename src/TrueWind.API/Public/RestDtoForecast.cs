@@ -1,13 +1,13 @@
 namespace TrueWind.API.Public;
 public sealed record RestDtoForecast
 {
-    public RestDtoForecast(float windSpeed, float gustSpeed, int windDirection, int airTemperature, int airPressure)
+    public RestDtoForecast(float windSpeed_ms, float gustSpeed_ms, int windDirection_deg, int airTemperature_celcius, int airPressure_hPa)
     {
-        WindSpeed_ms = windSpeed;
-        GustSpeed_ms = gustSpeed;
-        WindDirection_deg = windDirection;
-        AirTemperature_celcius = airTemperature;
-        AirPressure_hPa = airPressure;
+        WindSpeed_ms = windSpeed_ms;
+        GustSpeed_ms = gustSpeed_ms;
+        WindDirection_deg = windDirection_deg;
+        AirTemperature_celcius = airTemperature_celcius;
+        AirPressure_hPa = airPressure_hPa;
     }
 
     public float WindSpeed_ms { get; }

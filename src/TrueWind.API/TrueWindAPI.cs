@@ -9,11 +9,11 @@ public class TrueWindAPI
     public async Task<RestDtoForecast> GetForecast() {
         var forecast = await SmhiGateway.GetGkssData();
         var dto = new RestDtoForecast(
-            windSpeed: forecast.AvgWind.Value,
-            gustSpeed: forecast.GustSpeed.Value,
-            windDirection: forecast.WindDirection.Value,
-            airTemperature: forecast.AirTemperature.Value,
-            airPressure: forecast.AirPressure.Value);
+            windSpeed_ms: forecast.AvgWind.Value,
+            gustSpeed_ms: forecast.GustSpeed.Value,
+            windDirection_deg: forecast.WindDirection.Value,
+            airTemperature_celcius: forecast.AirTemperature.Value,
+            airPressure_hPa: forecast.AirPressure.Value);
         return dto;
     }
 }
