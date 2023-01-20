@@ -6,9 +6,9 @@ public class TrueWindApi
 {
     private SmhiAPI? _smhiGateway;
     private SmhiAPI SmhiGateway => _smhiGateway ??= new SmhiAPI();
-    public async Task<RestDtoForecast> GetForecast() {
+    public async Task<DtoForecast> GetForecast() {
         var forecast = await SmhiGateway.GetGkssData();
-        var dto = new RestDtoForecast(
+        var dto = new DtoForecast(
             windSpeed_ms: forecast.AvgWind.Value,
             gustSpeed_ms: forecast.GustSpeed.Value,
             windDirection_deg: forecast.WindDirection.Value,

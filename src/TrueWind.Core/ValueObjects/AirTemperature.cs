@@ -5,25 +5,15 @@ namespace TrueWind.Core.ValueObjects;
 public record AirTemperature
 {
     public int Value { get; }
+    public int Height { get; }
     public static string UnitShort = "°C";
     public static string UnitLong = "degrees celcius";
-    public AirTemperature(int temperature)
+    public AirTemperature(int temperature, int height)
     {
         EnsureValidAirTemerature(temperature);
 
         Value = temperature;
-    }
-
-    public AirTemperature(double temperature)
-    {
-        EnsureValidAirTemerature((int)temperature);
-        Value = (int)temperature;
-    }
-
-    public AirTemperature(float temperature)
-    {
-        EnsureValidAirTemerature((int)temperature);
-        Value = (int)temperature;
+        Height = height;
     }
 
     private static void EnsureValidAirTemerature(int temperature)

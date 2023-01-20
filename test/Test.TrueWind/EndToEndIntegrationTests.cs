@@ -50,8 +50,8 @@ public class EndToEndIntegrationTests : IDisposable
         // Assert
         if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
         {
-           var restDtoForecast = await httpResponseMessage.Content.ReadFromJsonAsync<RestDtoForecast>();
-           restDtoForecast.Should().BeOfType<RestDtoForecast>();
+           var restDtoForecast = await httpResponseMessage.Content.ReadFromJsonAsync<DtoForecast>();
+           restDtoForecast.Should().BeOfType<DtoForecast>();
             return;
         }
         var httpContent = await httpResponseMessage.Content.ReadAsStringAsync();

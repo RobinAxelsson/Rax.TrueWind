@@ -5,13 +5,15 @@ namespace TrueWind.Core.ValueObjects;
 public record AirPressure
 {
     public int Value { get; }
+    public int Height { get; }
     public static string UnitShort = "hPa";
     public static string UnitLong = "hektopascal";
-    public AirPressure(int airPressure)
+    public AirPressure(int airPressure, int height)
     {
         EnsureValidAirPressure(airPressure);
 
         Value = airPressure;
+        Height = height;
     }
 
     public AirPressure(double airPressure)

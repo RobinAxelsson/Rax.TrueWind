@@ -16,6 +16,7 @@ public sealed record Forecast
         AirPressure = airPressure;
     }
     public string Source { get; }
+    public GeoPoint[] GeoPolygon { get; }
     public DateTime ApprovedTime { get; }
     public DateTime ValidTime { get; }
     public WindSpeed AvgWind { get; }

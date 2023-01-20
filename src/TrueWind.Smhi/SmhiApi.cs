@@ -49,21 +49,21 @@ public class SmhiAPI : IDisposable
         var validTime = smhiPointRequest.TimeSeries[0].ValidTime;
 
         var parameters = smhiPointRequest.TimeSeries[0].Parameters;
-        var avgWind = parameters.First(x => x.Name == "ws").Values[0];
-        var maxWind = parameters.First(x => x.Name == "gust").Values[0];
-        var windDirection = parameters.First(x => x.Name == "wd").Values[0];
-        var airPressure = parameters.First(x => x.Name == "msl").Values[0];
-        var airTemperature = parameters.First(x => x.Name == "t").Values[0];
+        var avgWind = GetValueAndHeight(parameters, "ws");
+        var gustWind = GetValueAndHeight(parameters, "gust");
+        var windDirection = GetValueAndHeight(parameters, "wd");
+        var airPressure = GetValueAndHeight(parameters, "msl");
+        var airTemperature = GetValueAndHeight(parameters, "t");
 
         var forecast = new Forecast(
             _pointRequestEndpoint,
             approvedTime: smhiPointRequest!.ApprovedTime,
             validTime: validTime,
-            avgWind: new WindSpeed(avgWind),
-            maxWind: new WindSpeed(maxWind),
-            windDirection: new Direction(windDirection),
-            airTemperature: new AirTemperature(airTemperature),
-            airPressure: new AirPressure(airPressure)
+            avgWind: new WindSpeed(avgWind.value, avgWind.height),
+            maxWind: new WindSpeed(gustWind.value, gustWind.height),
+            windDirection: new Direction((int)windDirection.value, windDirection.height),
+            airTemperature: new AirTemperature((int)airTemperature.value, airTemperature.height),
+            airPressure: new AirPressure((int)airPressure.value, airPressure.height)
             );
 
         return forecast;
@@ -97,6 +97,11 @@ public class SmhiAPI : IDisposable
             _httpClient = null;
             _disposed = true;
         }
+    }
+    private static (float value, int height) GetValueAndHeight(Parameter[] parameters, string key)
+    {
+        var parameter = parameters.First(x => x.Name == key);
+        return (parameter.Values[0], parameter.Level);
     }
 
     public void Dispose()

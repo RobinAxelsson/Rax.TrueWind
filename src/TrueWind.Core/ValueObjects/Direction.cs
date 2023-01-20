@@ -5,25 +5,15 @@ namespace TrueWind.Core.ValueObjects;
 public record Direction
 {
     public int Value { get; }
+    public int Height { get; }
     public static string UnitShort = "°";
     public static string UnitLong = "degrees";
-    public Direction(int direction)
+    public Direction(int direction, int height)
     {
         EnsureValid(direction);
 
         Value = direction;
-    }
-
-    public Direction(double direction)
-    {
-        EnsureValid((int)direction);
-        Value = (int)direction;
-    }
-
-    public Direction(float direction)
-    {
-        EnsureValid((int)direction);
-        Value = (int)direction;
+        Height = height;
     }
 
     private static void EnsureValid(int direction)
