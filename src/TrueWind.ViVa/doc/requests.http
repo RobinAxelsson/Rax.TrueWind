@@ -1,0 +1,5 @@
+### Get all stations
+https://services.viva.sjofartsverket.se:8080/output/vivaoutputservice.svc/vivastation
+
+### Get Mavholmsbådan
+https://services.viva.sjofartsverket.se:8080/output/vivaoutputservice.svc/vivastation/101
