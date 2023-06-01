@@ -16,9 +16,11 @@ public class SmhiAPI : IDisposable
     private HttpClient? _httpClient;
     private HttpClient HttpClient => _httpClient ??= new HttpClient();
     private readonly string _pointRequestEndpoint;
-    public SmhiAPI()
+
+    public SmhiAPI() : this(new ConfigurationProvider()) {}
+
+    public SmhiAPI(ConfigurationProviderBase configurationProvider)
     {
-        ConfigurationProviderBase configurationProvider = new ConfigurationProvider();
         _pointRequestEndpoint = configurationProvider.GetUrlSmhiGkss();
     }
 

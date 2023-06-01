@@ -6,6 +6,7 @@ public class TrueWindApi
 {
     private SmhiAPI? _smhiGateway;
     private SmhiAPI SmhiGateway => _smhiGateway ??= new SmhiAPI();
+
     public async Task<DtoForecast> GetForecast() {
         var forecast = await SmhiGateway.GetGkssData();
         var dto = new DtoForecast(

@@ -2,7 +2,7 @@
 
 namespace TrueWind.Smhi.ConfigurationProviders
 {
-    internal abstract class ConfigurationProviderBase
+    public abstract class ConfigurationProviderBase
     {
         public string GetUrlSmhiGkss()
         {
